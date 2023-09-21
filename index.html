@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="submit" id="rock" value="rock" onclick="rockWin()"><img src="images/rock-emoji.png" style="width: 3rem;"></button>
+    <button  type="submit" id="paper" value="paper" onclick="paperWin()"><img src="images/paper-emoji.png" style="width: 3rem;"></button>
+    <button  type="submit" id="scissors" value="scissors" onclick="scissorWin()"><img src="images/scissors-emoji.png" style="width: 3rem;"></button>
+    <h4>wins:</h4><label id="wins"></label>
+    <h4>losses:</h4><label id="losses"></label>
+    <h4>ties:</h4><label id="ties"></label>
+    <!-- <label></label> -->
+    <script>
+        const rock = document.getElementById('rock').value;
+
+        const paper = document.getElementById('paper').value;
+        const scissors = document.getElementById('scissors').value;
+        const arrayOption = ['rock','paper','scissors'];
+        const arrayIndex = Math.floor(Math.random()*arrayOption.length);
+        // console.log(arrayIndex);
+        // console.log(arrayOption[arrayIndex]);
+        // console.log(typeof arrayOption[arrayIndex]);
+        // console.log(rock);
+        // console.log(typeof rock);
+
+       
+
+
+        function rockWin(){
+            
+            if(arrayOption[arrayIndex]==='rock'){
+                alert("computer chose rock, it's a tie");
+                ties=ties+1;
+                console.log(ties);
+                document.getElementById("ties").innerHTML=ties;
+                
+
+            }else if(arrayOption[arrayIndex]==='paper'){
+                alert("computer chose paper, computer wins, you lose");
+                losses=losses+1;
+                console.log(losses);
+                document.getElementById("losses").innerHTML=losses;
+               
+            }else if(arrayOption[arrayIndex]==='scissors'){
+                alert("computer chose scissors, computer loses, you win");
+                wins=wins+1;
+                console.log(wins);
+                document.getElementById("wins").innerHTML=wins;
+                
+            }   
+            
+            location.reload();
+        }   
+
+        function paperWin(){
+            location.reload();
+            if(arrayOption[arrayIndex]==='rock'){
+                alert("computer chose rock, computer loses , you win");
+                wins=wins+1;
+            }else if(arrayOption[arrayIndex]==='paper'){
+                alert("computer chose paper, it's a tie");
+                ties=ties+1;
+            }else if(arrayOption[arrayIndex]==='scissors'){
+                alert("computer chose scissors, computer wins, you lose");
+                losses=losses+1;
+            }   
+
+            location.reload();
+        }  
+
+
+        function scissorWin(){
+            location.reload();
+            if(arrayOption[arrayIndex]==='paper'){
+                alert("computer chose paper, computer loses , you win");
+                wins=wins+1;
+            }else if(arrayOption[arrayIndex]==='scissors'){
+                alert("computer chose scissor, it's a tie");
+                ties=ties+1;
+            }else if(arrayOption[arrayIndex]==='rock'){
+                alert("computer chose rock, computer wins, you lose");
+                losses=losses+1;
+            }  
+
+            location.reload(); 
+        } 
+    </script>
+</body>
+</html>
